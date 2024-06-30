@@ -1,0 +1,12 @@
+#footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    opacity: 50%;
+}
+#break {
+    stroke:rgb(0, 0, 0);
+    stroke-width:2
+  }

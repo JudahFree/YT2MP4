@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.videoBox {
+    max-width: 450px; /* How much width is given in the 825px width */
+    max-height: auto;
+    overflow-wrap: break-word;
+    border: 1px solid rgb(0, 156, 164);
+    margin: 2 auto;
+    padding: 15px;
+    flex: 1;
+}
+.videoBox h1 {
+  font-size: 20px;
+  width: 100%;
+  white-space: normal;
+}
+.videoBox p {
+  display: flex;
+  font-weight: 200;
+}
+.videoBox img {
+  display: flex;
+  align-items: flex-start;
+  width: 85%;
+}
+/* Tabs */
+.downloadBox {
+    max-width: 275px; /* How much width is given in the 825px width */
+    max-height: auto;
+    overflow-wrap: break-word;
+    border: 1px solid rgb(0, 156, 164);
+    margin: 2 auto;
+    margin-left: 10px;
+    padding: 15px;
+    flex: 1;
+}
+  

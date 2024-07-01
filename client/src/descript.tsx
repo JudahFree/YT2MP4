@@ -22,56 +22,19 @@ export const jsonToXml = (json: any) => {
 export const Tabs = () => {
   return (
     <div>
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
+      <ul className={styles.downloadNav} id="tabs" role="tablist">
         <li className="nav-item" role="presentation">
-          <button
-            className="nav-link active"
-            id="mp4-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#mp4-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="mp4-tab-pane"
-            aria-selected="true"
-          >
+          <button className="nav-link active" id="mp4-tab" type="button">
             MP4
           </button>
         </li>
         <li className="nav-item" role="presentation">
-          <button
-            className="nav-link"
-            id="mp3-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#mp3-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="mp3-tab-pane"
-            aria-selected="false"
-          >
+          <button className="nav-link" id="mp3-tab" name="disabled">
             MP3
           </button>
         </li>
       </ul>
-      <div className="tab-content" id="myTabContent">
-        <div
-          className="tab-pane fade show active"
-          id="mp4-tab-pane"
-          role="tabpanel"
-          aria-labelledby="mp4-tab"
-          tabIndex={0}
-        >
-          ...
-        </div>
-        <div
-          className="tab-pane fade"
-          id="mp3-tab-pane"
-          role="tabpanel"
-          aria-labelledby="mp3-tab"
-          tabIndex={0}
-        >
-          ...
-        </div>
-      </div>
+      <div className="tab-content"></div>
     </div>
   );
 };

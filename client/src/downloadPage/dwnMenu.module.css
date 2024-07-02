@@ -1,0 +1,24 @@
+/* Tabs */
+.downloadNav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 15px;
+    background-color: rgb(85, 85, 85);
+    border-radius: 25px 25px 0px 0px;
+}
+.downloadNav li {
+    flex: 1;
+}
+.downloadNav button {
+    width: 95%;
+    height: auto; 
+} 
+    

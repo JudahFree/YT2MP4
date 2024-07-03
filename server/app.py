@@ -14,6 +14,7 @@ def download():
     with YoutubeDL() as ydl:
         ydl.download(URLS)
     return
+
 @app.route("/info", methods=['GET'])
 def info():
     ydl_opts = {}

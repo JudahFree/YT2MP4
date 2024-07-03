@@ -9,11 +9,11 @@ CORS(app)
 
 @app.route("/download", methods=['GET'])
 def download():
+    URLS = request.args.get('url')
+    ydl_opts = {}
     with YoutubeDL() as ydl:
-        URLS = request.args.get('url')
-        ydl_opts = {}
         ydl.download(URLS)
-
+    return
 @app.route("/info", methods=['GET'])
 def info():
     ydl_opts = {}

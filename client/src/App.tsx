@@ -4,6 +4,7 @@ import { Footer } from "./footer";
 import { jsonToXml } from "./descript";
 import logo from "./assets/YTMP4.svg";
 import loadingSpinner from "./assets/icons8-Loading.png";
+import { urlSource } from "./URL/urlSource.tsx";
 
 function App() {
   return (
@@ -20,9 +21,7 @@ function App() {
 }
 
 export function YTInput() {
-  const [url, setUrl] = useState(
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D"
-  );
+  const { url, setUrl } = urlSource();
   const [error, setError] = useState("");
   const [xmlData, setXmlData] = useState<JSX.Element | null>(null);
   const [loading, setLoading] = useState(false);
@@ -34,7 +33,6 @@ export function YTInput() {
   const handleButtonClick = async () => {
     if (url && url.startsWith("https://www.youtube.com/watch?v=")) {
       setLoading(true);
-      console.log(url);
       try {
         const response = await fetch("http://127.0.0.1:5000/info?url=" + url, {
           method: "GET",

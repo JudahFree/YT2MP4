@@ -1,5 +1,5 @@
 import styles from "./Descript.module.css";
-import { Tabs } from "./downloadPage/dwnMenu";
+import { Tabs } from "./dwnMenu";
 
 export const jsonToXml = (json: any) => {
   const { thumbnail, title, uploader, like_count } = json;

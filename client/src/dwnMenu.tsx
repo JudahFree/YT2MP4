@@ -31,26 +31,12 @@ export function DownloadMenu() {
 
   const handleButtonDownload = async () => {
     try {
-      const response = await fetch(
+      await fetch(
         "http://127.0.0.1:5000/download?url=" + encodeURIComponent(url),
         {
           method: "GET",
         }
       );
-
-      if (response.ok) {
-        const blob = await response.blob();
-        const downloadUrl = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.style.display = "none";
-        a.href = downloadUrl;
-        a.download = "video.mp4";
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(downloadUrl);
-      } else {
-        console.error("Download failed", await response.json());
-      }
     } catch (error) {
       console.error("Error during fetch", error);
     }

@@ -34,12 +34,15 @@ export function YTInput() {
     if (url && url.startsWith("https://www.youtube.com/watch?v=")) {
       setLoading(true);
       try {
-        const response = await fetch("http://127.0.0.1:5000/info?url=" + url, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "http://127.0.0.1:5000/info?url=" + encodeURIComponent(url),
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Network response was not ok");

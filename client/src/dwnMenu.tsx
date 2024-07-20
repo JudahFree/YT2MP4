@@ -1,5 +1,6 @@
 import styles from "./dwnMenu.module.css";
 import { urlSource } from "./URL/urlSource";
+import axios from "axios";
 
 export function Tabs() {
   return (
@@ -31,14 +32,21 @@ export function DownloadMenu() {
 
   const handleButtonDownload = async () => {
     try {
-      await fetch(
-        "http://127.0.0.1:5000/download?url=" + encodeURIComponent(url),
+      const response = await axios.get(
+        `http://127.0.0.1:5000/download?url=${url}`,
         {
-          method: "GET",
+          responseType: "blob",
         }
       );
+      const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", "video.mp4");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
-      console.error("Error during fetch", error);
+      console.error("Error downloading video:", error);
     }
   };
   return (

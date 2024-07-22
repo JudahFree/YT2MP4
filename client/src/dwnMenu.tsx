@@ -33,7 +33,7 @@ export function DownloadMenu() {
   const handleButtonDownload = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:5000/download?url=${url}`,
+        "http://127.0.0.1:5000/download?url=" + encodeURIComponent(url),
         {
           responseType: "blob",
         }

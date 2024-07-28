@@ -36,6 +36,7 @@ export function DownloadMenu() {
         "http://127.0.0.1:5000/download?url=" + encodeURIComponent(url),
         {
           responseType: "blob",
+          method: "GET",
         }
       );
       const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));

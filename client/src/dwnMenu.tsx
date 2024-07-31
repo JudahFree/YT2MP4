@@ -52,7 +52,7 @@ export function DownloadMenu() {
   };
   return (
     <>
-      <div>
+      <div className={styles.downloadMenu}>
         <button id="dw-button" onClick={handleButtonDownload}>
           Download
         </button>

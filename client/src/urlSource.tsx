@@ -13,7 +13,9 @@ export const createImportChangeHandler = (
   setUrl: React.Dispatch<React.SetStateAction<string>>
 ) => {
   return (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUrl(event.target.value);
+    const newUrl = event.target.value;
+    setUrl(newUrl);
+    userLink = newUrl;
   };
 };
 
@@ -48,13 +50,11 @@ export function YTInput() {
         setError(""); // Clear any error messages
         const xml = jsonToXml(data);
         setXmlData(xml);
-        userLink = url;
       } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
         setError("Failed to process the URL. Please try again later.");
       } finally {
         setLoading(false);
-        console.log(userLink);
       }
     } else {
       setError(

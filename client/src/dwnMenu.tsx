@@ -42,7 +42,7 @@ export function DownloadMenu() {
       const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = downloadUrl;
-      link.setAttribute("download", "yt2mp4-video.mp4");
+      link.setAttribute("download", "yt2mp4.mp4");
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
